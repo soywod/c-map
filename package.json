@@ -1,6 +1,6 @@
 {
   "name": "c-map",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple key-val array written in C",
   "main": "example.c",
   "scripts": {
