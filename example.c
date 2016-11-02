@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "assoc.h"
+#include "map.h"
 
 void callback()
 {
@@ -9,17 +9,27 @@ void callback()
 
 int main()
 {
-	Assoc* a = assocNew();
+	struct map* m;
 
-	assocAdd("key 1", "my value", a);
-	assocAdd("key 2", 21, a);
-	assocAdd("key 3", callback, a);
+	char* strval;
+	int intval;
+	void (*funcval)();
 
-	printf("%s\n", assocGet("key 1", a));
-	printf("%d\n", assocGet("key 2", a));
-	((void (*)()) assocGet("key 3", a))();
+	m = mapNew();
 
-	assocClose(a);
+	mapAdd("key 1", "value", m);
+	mapAdd("key 2", (int*) 21, m); // Casted to avoid warning
+	mapAdd("key 3", callback, m);
+
+	strval = mapGet("key 1", m);
+	intval = (long) mapGet("key 2", m); // Casted to avoid warning
+	funcval = mapGet("key 3", m);
+
+	printf("%s\n", strval);
+	printf("%d\n", intval);
+	funcval();
+
+	mapClose(m);
 
 	return 0;
 }
