@@ -1,0 +1,27 @@
+{
+  "name": "c-map",
+  "version": "0.0.1",
+  "description": "A simple key-val array written in C",
+  "main": "example.c",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soywod/c-map.git"
+  },
+  "keywords": [
+  	"map",
+	"array",
+    "c",
+    "web",
+    "fast",
+    "simple"
+  ],
+  "author": "Clément DOUIN <clementdouin@soywod.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soywod/c-map/issues"
+  },
+  "homepage": "https://github.com/soywod/c-map#readme"
+}
